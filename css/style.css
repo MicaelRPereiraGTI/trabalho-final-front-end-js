@@ -60,9 +60,15 @@ body * {
 
 .card-login > h1 {
     color: #00ff88;
-    font-weight:800;
+    font-weight:500;
     margin: 0;
     font-family: 'Monoton', sans-serif;
+}
+
+.card-login > a {
+    color: #00ff88;
+    font-weight:600;
+    text-decoration: none;
 }
 
 .textfield {
@@ -140,4 +146,53 @@ body * {
     .card-login {
         width: 50%;
     }
+}
+
+/* TELA DE CADASTRO 
+#login-cadastro {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+} 
+
+.cadastrar > h1{
+    font-size: 30px;
+}
+
+.textfield > form > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;   
+}
+
+.textfield > form > label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.textfield > form > input::placeholder {
+    color:  #f0ffff94;
+} */
+
+#login-index {
+    display: none;
+}
+
+.btn-cadastrar {
+    display: flex;
+}
+
+.btn-cadastrar > button {
+    box-sizing: border-box;
+    width: 150px;
 }

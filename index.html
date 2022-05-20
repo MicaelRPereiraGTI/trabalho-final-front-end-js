@@ -5,30 +5,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mica - Notes</title>
         <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     </head>
     <body> 
 
         <div class="main-login">
+
             <div class="left-login">
                 <h1>NOTES</h1>
                 <img src="css/animate.svg" class="left-login-image" alt="Animação">
             </div>
-            <div class="right-login">
+            <div class="right-login" id="login-index">
                 <div class="card-login">
                     <h1>LOGIN</h1>
                     <div class="textfield">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" placeholder="Digite seu usuário">
+                        <label for="usuario">E-mail</label>
+                        <input type="email" name="usuario" placeholder="Digite seu usuário">
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="Digite sua senha">
                     </div>
                     <button class="btn-login">Login</button>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Criar conta</a>
                 </div>
             </div>
+
+            <!--CADASTRO LOGIN-->
+          
+            <div class="right-login" id="login-cadastro">
+                <div class="card-login">
+                    <h1>CRIAR USUÁRIO</h1>
+                    <div class="textfield">
+                        <label for="usuario">E-mail</label>
+                        <input type="email" name="usuario" placeholder="Digite seu usuário" id="email">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Digite sua senha" id="email">
+                    </div>
+                    <div class="btn-cadastrar">
+                        <button class="btn-login">Salvar</button>
+                        <button class="btn-login">Cancelar</button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            
+
         </div>
 
-       <script src="js/index.js"></script>
+       <!-- <script src="js/index.js"></script> -->
     </body>
 </html>
