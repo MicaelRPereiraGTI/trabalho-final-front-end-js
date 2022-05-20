@@ -118,6 +118,24 @@ body * {
     box-shadow: 0px 10px 40px -12px #00ff8052;
 }
 
+#criar-conta {
+    text-decoration: none;
+}
+
+/* PÁGINA CADASTRAR */
+
+.btn-cadastrar {
+    display: flex;
+}
+
+.btn-cadastrar > button {
+    box-sizing: border-box;
+    width: 150px;
+}
+
+
+/* RESPONSIVIDADE */
+
 @media only screen and (max-width: 950px) {
     .card-login {
         width: 85%;
@@ -146,53 +164,4 @@ body * {
     .card-login {
         width: 50%;
     }
-}
-
-/* TELA DE CADASTRO 
-#login-cadastro {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-} 
-
-.cadastrar > h1{
-    font-size: 30px;
-}
-
-.textfield > form > input {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background: #514869;
-    color: #f0ffffde;
-    font-size: 12pt;
-    box-shadow: 0px 10px 40px #00000056;
-    outline: none;
-    box-sizing: border-box;   
-}
-
-.textfield > form > label {
-    color: #f0ffffde;
-    margin-bottom: 10px;
-}
-
-.textfield > form > input::placeholder {
-    color:  #f0ffff94;
-} */
-
-#login-index {
-    display: none;
-}
-
-.btn-cadastrar {
-    display: flex;
-}
-
-.btn-cadastrar > button {
-    box-sizing: border-box;
-    width: 150px;
 }

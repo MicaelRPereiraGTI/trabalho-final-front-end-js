@@ -1,4 +1,4 @@
- //Pego os dados de usuários que tenho no meu localstorage
+/*  //Pego os dados de usuários que tenho no meu localstorage
  let usuarios = JSON.parse(localStorage.getItem('db_client'));
 
  //crio um objeto pra comparar com os dados do objeto que vem do localstorage
@@ -17,4 +17,4 @@ usuarios.forEach(elemento=>{
 if(usuario.email === login.value && usuario.senha === senha.value){
      sessionStorage.setItem('logado', usuario.email)
      window.location.href = 'home.html';
- }
+ } */
