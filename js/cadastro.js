@@ -4,7 +4,9 @@ const senha = document.getElementById('senha');
 const enviar = document.getElementById('enviar');
 const btnCancelar = document.getElementById('cancelar');
 
-//BOTÃO SALVAR
+//SALVANDO NO LOCALSTORAGE
+
+
 
 
 
