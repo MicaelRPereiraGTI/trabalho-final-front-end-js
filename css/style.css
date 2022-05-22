@@ -120,17 +120,22 @@ body * {
 
 #criar-conta {
     text-decoration: none;
+    display: none;
 }
 
 /* PÁGINA CADASTRAR */
 
-.btn-cadastrar {
+/* .btn-cadastrar {
     display: flex;
 }
 
 .btn-cadastrar > button {
     box-sizing: border-box;
     width: 150px;
+} */
+
+#login-cadastro {
+    display: none;
 }
 
 

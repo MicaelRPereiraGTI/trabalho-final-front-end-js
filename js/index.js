@@ -1,3 +1,55 @@
+//CAPTURANDO ELEMENTOS
+const email = document.getElementById('email');
+const senha = document.getElementById('senha');
+const enviar = document.getElementById('enviar');
+const btnCancelar = document.getElementById('btn-cancelar');
+const btnCadastrar = document.getElementById('btn-cadastrar');
+const cardLogin = document.getElementById('login-index');
+const cardCadastro = document.getElementById('login-cadastro');
+
+//SALVANDO NO LOCALSTORAGE
+
+
+
+
+
+//BOTÃO CADASTRAR
+btnCadastrar.addEventListener('click', modificaCardCadastrar());
+
+function modificaCardCadastrar() {
+    cardLogin.setAttribute("style", "display: none");
+    cardCadastro.setAttribute("style", "display: flex");
+}
+
+//BOTÃO CANCELAR
+btnCancelar.addEventListener('click', modificaCardCadastrar());
+
+function modificaCardCadastrar() {
+    cardLogin.setAttribute("style", "display: flex");
+    cardCadastro.setAttribute("style", "display: none");
+}
+
+
+/* btnCancelar.addEventListener('click', (nav) => {
+    nav.preventDefault();
+    voltarIndex();
+});
+
+function voltarIndex (){
+    window.location.href = "index.html";
+}
+
+
+ */
+
+
+
+
+
+
+
+
+
 /*  //Pego os dados de usuários que tenho no meu localstorage
  let usuarios = JSON.parse(localStorage.getItem('db_client'));
 
