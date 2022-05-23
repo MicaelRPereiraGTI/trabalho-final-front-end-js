@@ -1,6 +1,4 @@
 //CAPTURANDO ELEMENTOS
-const email = document.getElementById('email');
-const senha = document.getElementById('senha');
 const enviar = document.getElementById('enviar');
 const btnCancelar = document.getElementById('btn-cancelar');
 const btnCadastrar = document.getElementById('btn-cadastrar');
@@ -10,11 +8,8 @@ const cardCadastro = document.getElementById('login-cadastro');
 //SALVANDO NO LOCALSTORAGE
 
 
-
-
-
 //BOTÃO CADASTRAR
-btnCadastrar.addEventListener('click', modificaCardCadastrar());
+btnCadastrar.addEventListener("click", modificaCardCadastrar);
 
 function modificaCardCadastrar() {
     cardLogin.setAttribute("style", "display: none");
@@ -22,13 +17,46 @@ function modificaCardCadastrar() {
 }
 
 //BOTÃO CANCELAR
-btnCancelar.addEventListener('click', modificaCardCadastrar());
+btnCancelar.addEventListener("click", modificaCardParaLogin);
 
-function modificaCardCadastrar() {
+function modificaCardParaLogin() {
     cardLogin.setAttribute("style", "display: flex");
     cardCadastro.setAttribute("style", "display: none");
 }
 
+//LOGANDO NO SISTEMA
+const email = document.getElementById('email');
+const senha = document.getElementById('senha');
+
+
+
+document.querySelector('#btn-login').addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    logar();
+});
+
+function logar(){
+
+};
+
+let usuarios = [];
+
+let user = {
+    email: '',
+    senha: ''
+};
+
+usuarios = JSON.parse(localStorage.getItem('db_login'));
+
+usuarios.forEach(elemento=>{
+    if(elemento.email === login.value && elemento.senha === senha.value){
+        usuario = {
+            email: elemento.email,
+            senha: elemento.senha
+        }
+    }
+});
 
 /* btnCancelar.addEventListener('click', (nav) => {
     nav.preventDefault();
