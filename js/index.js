@@ -1,17 +1,50 @@
 //CAPTURANDO ELEMENTOS
-const enviar = document.getElementById('enviar');
 const btnCancelar = document.getElementById('btn-cancelar');
 const btnCadastrar = document.getElementById('btn-cadastrar');
 const cardLogin = document.getElementById('login-index');
 const cardCadastro = document.getElementById('login-cadastro');
+const focus = document.querySelectorAll('input');
 
-//SALVANDO NO LOCALSTORAGE
+//CRIANDO E SALVANDO USUÁRIO
+document.querySelector('#btn-salvar').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let email = document.querySelector('#email-cadastrar').value;
+    let senha = document.querySelector('#senha-cadastrar').value;
+    let confirmaSenha = document.querySelector('#input-confirma-senha').value;
+
+    if (senha === confirmaSenha){
+        salvar(email, senha);
+        alert("Cadastro realizado com sucesso!")
+    }else{
+        alert("As senhas digitadas devem ser iguais!")
+    }
+    
+});
+
+function salvar(e, s){
+    let db = JSON.parse(localStorage.getItem('usuarios') || '[]');
+  
+    let usuario = {
+        id: db.length + 1,
+        login: e,
+        senha: s
+    }
+
+    if(usuario )
+
+    db.push(usuario);
+    
+    localStorage.setItem('usuarios', JSON.stringify(db));
+    location.href = 'index.html';    
+};
+
 
 
 //BOTÃO CADASTRAR
-btnCadastrar.addEventListener("click", modificaCardCadastrar);
+btnCadastrar.addEventListener("click", modificaCardParaCadastrar);
 
-function modificaCardCadastrar() {
+function modificaCardParaCadastrar() {
     cardLogin.setAttribute("style", "display: none");
     cardCadastro.setAttribute("style", "display: flex");
 }
@@ -24,77 +57,62 @@ function modificaCardParaLogin() {
     cardCadastro.setAttribute("style", "display: none");
 }
 
+//EVENTO DE FOCO NOS CAMPOS LOGIN E SENHA
+focus.forEach((value) => {
+    value.addEventListener('focus', () => {
+        value.style.borderColor = "#00ff88";
+    });
+    value.addEventListener('blur', () => {
+        value.style.borderColor = "transparent";
+    })
+})
+
+
 //LOGANDO NO SISTEMA
-const email = document.getElementById('email');
-const senha = document.getElementById('senha');
-
-
-
-document.querySelector('#btn-login').addEventListener('click', (e)=>{
+document.querySelector('#btn-logar').addEventListener('click', (e)=>{
     e.preventDefault();
-
-    logar();
+    entrar()
 });
 
-function logar(){
+function entrar(){
+    let email = document.querySelector('#email-login');
+    let senha = document.querySelector('#senha-login');
 
-};
+    let listaUser = [];
 
-let usuarios = [];
-
-let user = {
-    email: '',
-    senha: ''
-};
-
-usuarios = JSON.parse(localStorage.getItem('db_login'));
-
-usuarios.forEach(elemento=>{
-    if(elemento.email === login.value && elemento.senha === senha.value){
-        usuario = {
-            email: elemento.email,
-            senha: elemento.senha
-        }
+    let usuarioValido = {
+        email: "",
+        senha: ""
     }
-});
 
-/* btnCancelar.addEventListener('click', (nav) => {
-    nav.preventDefault();
-    voltarIndex();
-});
+    listaUser = JSON.parse(localStorage.getItem('usuarios'));
 
-function voltarIndex (){
-    window.location.href = "index.html";
+    //vai varrer todos os itens
+    listaUser.forEach(item=>{
+        if(email.value === item.email && senha.value === item.senha){
+            usuarioValido = {
+                id: item.id,
+                login: item.email,
+                senha: item.senha
+            }
+        }
+    });
+
+    if(email.value === usuarioValido.login && senha.value === usuarioValido.senha){
+        alert('Bem-vindo so sitema Notes!')
+        saveSession(usuarioValido.id);
+        window.location.href ='recados.html';
+    }else{
+        alert('Algo deu errado, verifique o e-mail e senha digitado!')
+    }
 }
+;
 
+function saveSession(data){
+    if(saveSession){
+        localStorage.setItem("session", data);
+    }
 
- */
+    sessionStorage.setItem("logado", JSON.stringify(data));
 
-
-
-
-
-
-
-
-
-/*  //Pego os dados de usuários que tenho no meu localstorage
- let usuarios = JSON.parse(localStorage.getItem('db_client'));
-
- //crio um objeto pra comparar com os dados do objeto que vem do localstorage
- let usuario = {
-     email: '',
-     senha: ''
- }
-usuarios.forEach(elemento=>{
-     if(elemento.email === login.value && elemento.senha === senha.value){
-         usuario = {
-             email: elemento.email,
-             senha: elemento.senha
-         }
-     }
- });
-if(usuario.email === login.value && usuario.senha === senha.value){
-     sessionStorage.setItem('logado', usuario.email)
-     window.location.href = 'home.html';
- } */
+};

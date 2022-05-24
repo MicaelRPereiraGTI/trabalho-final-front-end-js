@@ -19,28 +19,32 @@
                         <h1>LOGIN</h1>
                         <div class="textfield">
                             <label for="usuario">E-mail</label>
-                            <input type="email" name="usuario" placeholder="Digite seu usuário">
+                            <input type="email" name="usuario" placeholder="Digite seu usuário" id="email-login" required>
                         </div>
                         <div class="textfield">
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" placeholder="Digite sua senha">
+                            <input type="password" name="senha" placeholder="Digite sua senha" id="senha-login" required>
                         </div>
-                        <button class="btn-login" id="btn-login">Login</button>
+                        <button class="btn-login" id="btn-logar">Login</button>
                         <a href="#" id="btn-cadastrar">Criar conta</a>
                     </div>
                 </form>
             </section>
             <section class="right-login" id="login-cadastro">
-                <form action=""></form>
+                <form id="form-cadastrar"></form>
                     <div class="card-login">
                         <h1>CADASTRO</h1>
                         <div class="textfield">
-                            <label for="usuario">E-mail</label>
-                            <input type="email" name="usuario" placeholder="Digite seu usuário" id="email">
+                            <label for="usuario" id="label-input-email">E-mail</label>
+                            <input type="email" name="usuario" placeholder="Digite seu usuário" id="email-cadastrar" required>
                         </div>
                         <div class="textfield">
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" placeholder="Digite sua senha" id="senha">
+                            <input type="password" name="senha" placeholder="Digite sua senha" id="senha-cadastrar" required>
+                        </div>
+                        <div class="textfield">
+                            <label for="input-confirma-senha">Confirme a senha:</label>
+                            <input type="password" name="input-confirma-senha" placeholder="Repita a senha" id="input-confirma-senha" required>
                         </div>
                         <button class="btn-login" id="btn-salvar">Salvar</button>
                         <a href="#" id="btn-cancelar">Cancelar</a>
