@@ -1,0 +1,56 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu Mono', sans-serif;
+    background: #201b2c;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    justify-content: center;
+}
+header > h2 {
+    color: #00ff88;
+    font-family: 'Monoton', cursive;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+header > button {
+    width: 8%;
+    height: 20%;
+    padding: 10px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+.main-recados {
+    width: 100vw;
+    height: 80vh;
+}
+
+.row-inputs {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.row-table {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+} */

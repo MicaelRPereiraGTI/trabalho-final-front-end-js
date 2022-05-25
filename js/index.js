@@ -13,14 +13,24 @@ document.querySelector('#btn-salvar').addEventListener('click', (e) => {
     let senha = document.querySelector('#senha-cadastrar').value;
     let confirmaSenha = document.querySelector('#input-confirma-senha').value;
 
-    if (senha === confirmaSenha){
-        salvar(email, senha);
-        alert("Cadastro realizado com sucesso!")
+    if (email.length > 5 && validaEmail(email) == true){
+        if(senha === confirmaSenha){
+            salvar(email, senha);
+            alert("Cadastro realizado com sucesso!");
+        }else{
+            alert("As senhas digitadas devem ser iguais!")
+        }
     }else{
-        alert("As senhas digitadas devem ser iguais!")
+        alert("O E-mail digitado é inválido! \nExemplo: texto@texto.com" )
     }
     
 });
+
+//VALIDANDO E-MAIL
+function validaEmail (validaE){
+    let re = /\S+@\S+\.\S+/;
+    return re.test(validaE);
+}
 
 function salvar(e, s){
     let db = JSON.parse(localStorage.getItem('usuarios') || '[]');
@@ -75,8 +85,8 @@ document.querySelector('#btn-logar').addEventListener('click', (e)=>{
 });
 
 function entrar(){
-    let email = document.querySelector('#email-login');
-    let senha = document.querySelector('#senha-login');
+    let email = document.querySelector('#email-login').value;
+    let senha = document.querySelector('#senha-login').value;
 
     let listaUser = [];
 
@@ -87,18 +97,17 @@ function entrar(){
 
     listaUser = JSON.parse(localStorage.getItem('usuarios'));
 
-    //vai varrer todos os itens
     listaUser.forEach(item=>{
-        if(email.value === item.email && senha.value === item.senha){
+        if(email === item.login && senha === item.senha){
             usuarioValido = {
                 id: item.id,
-                login: item.email,
+                login: item.login,
                 senha: item.senha
             }
         }
     });
 
-    if(email.value === usuarioValido.login && senha.value === usuarioValido.senha){
+    if(email === usuarioValido.login && senha === usuarioValido.senha){
         alert('Bem-vindo so sitema Notes!')
         saveSession(usuarioValido.id);
         window.location.href ='recados.html';

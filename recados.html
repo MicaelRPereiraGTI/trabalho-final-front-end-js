@@ -4,52 +4,57 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mica - Notes</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/recados.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         
 </head>
 <body>
-    <header>
-      <h2>My Notes</h2>
+    <header class="header-recados d-flex flex-row mb-3">
+      <h2 class="d-flex">My Notes</h2>
       <button class="btn-sair" id="btn-sair">SAIR</button>
     </header>
 
     <main class="main-recados">
 
-      <form>
-        <div class="input-descricao">
-          <label for="descricao">Descrição</label>
-          <input type="text" name="descricao" id="descricao">
+      <div class="container">
+
+        <div class="col">
+          <div class="row-inputs">
+            <form id="form-recados">
+              <div class="input-descricao">
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricoes" id="descricao">
+              </div>
+              <div class="input-detalhe">
+                <label for="detalhamento">Detalhamento</label>
+                <input type="text" name="detalhamentos" id="detalhamento">
+              </div>
+              <input type="hidden" name="idx" value="novo" id="idx">
+              <input type="submit" value="Salvar">
+              <div id="msg-erro"></div>
+            </form>
+          </div>
+          <div class="row-table table table-striped table-hover" >
+            <table>
+              <caption>
+                <h3>Lista de produtos</h3>
+              </caption>
+          
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Descrição</th>
+                  <th>Detalhamento</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
         </div>
-        <div class="input-detalhe">
-          <label for="detalhamento">Detalhamento</label>
-          <input type="text" name="detalhamento" id="detalhamento">
-        </div>
-        <button id="btn-salvar">Salvar</button>
-      </form>
-
-
-      <table>
-
-        <caption>
-          <h3>Lista de produtos</h3>
-        </caption>
-    
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Descrição</th>
-            <th>Detalhamento</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-    
-        <tbody id="tbody"></tbody>
-    
-      </table>
+      </div>
     </main>
 
-  
-
+    <script src="js/recados.js"></script>
 </body>
 </html>
