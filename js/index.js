@@ -88,16 +88,16 @@ function entrar(){
     let email = document.querySelector('#email-login').value;
     let senha = document.querySelector('#senha-login').value;
 
-    let listaUser = [];
+    /* let listaUser = '[]'; */
 
     let usuarioValido = {
-        email: "",
+        login: "",
         senha: ""
     }
 
-    listaUser = JSON.parse(localStorage.getItem('usuarios'));
+    listaUser = JSON.parse(localStorage.getItem('usuarios') || '[]');
 
-    listaUser.forEach(item=>{
+    listaUser.forEach(item => {
         if(email === item.login && senha === item.senha){
             usuarioValido = {
                 id: item.id,
@@ -112,10 +112,9 @@ function entrar(){
         saveSession(usuarioValido.id);
         window.location.href ='recados.html';
     }else{
-        alert('Algo deu errado, verifique o e-mail e senha digitado!')
+        alert('Algo deu errado, verifique o e-mail e a senha digitado \nOu clique em Criar conta!')
     }
-}
-;
+};
 
 function saveSession(data){
     if(saveSession){
